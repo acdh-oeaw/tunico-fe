@@ -7,7 +7,6 @@
         </div>
         <div class="d-flex">
           <v-tabs v-model="mainData.search.view.type" grow height="30" class="flex-shrink-1 fx-bb border-0 mt-1">
-            <v-tab href="#voice">voice</v-tab>
             <v-tab href="#plain">plain</v-tab>
             <v-tab href="#pos">PoS</v-tab>
             <v-tab href="#xml-view">XML</v-tab>

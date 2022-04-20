@@ -4,7 +4,6 @@
       <div class="d-flex fx-bb" v-if="aElement">
         <v-tabs v-model="vTab" grow height="30" class="flex-shrink-1">
           <v-tab href="#textheader">Text Header</v-tab>
-          <v-tab href="#voice">voice</v-tab>
           <v-tab href="#plain">plain</v-tab>
           <v-tab href="#pos">PoS</v-tab>
           <v-tab href="#xml">XML</v-tab>
@@ -133,7 +132,7 @@ export default {
             console.log('Load Header ...', this.mainData.apiUrl, this.mainData.corpus.selectedElement)
             this.aElement.headerLoading = true
             this.$http
-              .get(this.mainData.apiUrl + 'xml/' + this.mainData.corpus.selectedElement + '.xml/header')
+              .get(this.mainData.apiUrl + 'xml/' + this.mainData.corpus.selectedElement + '/header')
               .then((response) => {
                 if (response.data && response.data.xmlId && this.mainData.corpus.selectedElement && this.mainData.corpus.obj[response.data.xmlId.replace(/\.xml$/, '')]) {
                   let lElement = this.mainData.corpus.obj[response.data.xmlId.replace(/\.xml$/, '')]
@@ -160,7 +159,7 @@ export default {
             console.log('Load XML ...', this.mainData.apiUrl)
             this.aElement.xmlLoading = true
             this.$http
-              .get(this.mainData.apiUrl + 'xml/' + this.mainData.corpus.selectedElement + '.xml/file')
+              .get(this.mainData.apiUrl + 'xml/' + this.mainData.corpus.selectedElement + '/file')
               .then((response) => {
                 if (response.data && response.data.xmlId && this.mainData.corpus.selectedElement && this.mainData.corpus.obj[response.data.xmlId.replace(/\.xml$/, '')]) {
                   let lElement = this.mainData.corpus.obj[response.data.xmlId.replace(/\.xml$/, '')]

@@ -20,48 +20,6 @@
         <v-btn :title="mainData.options.fullWidth ? 'NARROW VIEW' : 'EXPANDED VIEW'" class="mr-1" @click="mainData.options.fullWidth = !mainData.options.fullWidth" icon small v-if="mainData.wideScreen">
           <v-icon>{{ mainData.options.fullWidth ? 'mdi-unfold-less-vertical' : 'mdi-unfold-more-vertical' }}</v-icon>
         </v-btn>
-        <v-menu offset-y>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn text small v-bind="attrs" v-on="on" color="#125">
-              <v-icon class="mr-2" style="top: -2px;">mdi-book-open-variant</v-icon>
-              Corpus information
-            </v-btn>
-          </template>
-          <v-list>
-            <v-list-item @click="mainData.corpus.selectedElement = false; mainData.options.singleView = 'corpus'; mainData.corpus.showCorpusHeader = true;">
-              <v-list-item-icon class="mr-4"><v-icon>mdi-open-in-app</v-icon></v-list-item-icon>
-              <v-list-item-title>VOICE Header</v-list-item-title>
-            </v-list-item>
-            <v-list-item href="https://voice.acdh.oeaw.ac.at/wp-content/uploads/2021/09/Search-manual-VOICE-3.0-Online.pdf" target="_blank">
-              <v-list-item-icon class="mr-4"><v-icon>mdi-file-pdf-box</v-icon></v-list-item-icon>
-              <v-list-item-title>Search Manual</v-list-item-title>
-            </v-list-item>
-            <v-list-item href="https://voice.acdh.oeaw.ac.at/wp-content/uploads/2021/04/VOICE-mark-up-conventions.pdf" target="_blank">
-              <v-list-item-icon class="mr-4"><v-icon>mdi-file-pdf-box</v-icon></v-list-item-icon>
-              <v-list-item-title>Mark-Up Conventions</v-list-item-title>
-            </v-list-item>
-            <v-list-item href="https://voice.acdh.oeaw.ac.at/wp-content/uploads/2021/04/VOICE-spelling-conventions.pdf" target="_blank">
-              <v-list-item-icon class="mr-4"><v-icon>mdi-file-pdf-box</v-icon></v-list-item-icon>
-              <v-list-item-title>Spelling Conventions</v-list-item-title>
-            </v-list-item>
-            <v-list-item href="https://voice.acdh.oeaw.ac.at/wp-content/uploads/2021/04/POS-tagging-and-lemmatization-manual.pdf" target="_blank">
-              <v-list-item-icon class="mr-4"><v-icon>mdi-file-pdf-box</v-icon></v-list-item-icon>
-              <v-list-item-title>POS and Lemmatization Manual</v-list-item-title>
-            </v-list-item>
-            <v-list-item href="https://voice.acdh.oeaw.ac.at/wp-content/uploads/2021/04/Short-POS-tagset.pdf" target="_blank">
-              <v-list-item-icon class="mr-4"><v-icon>mdi-file-pdf-box</v-icon></v-list-item-icon>
-              <v-list-item-title>Short POS Tag Set</v-list-item-title>
-            </v-list-item>
-            <v-list-item href="https://voice.acdh.oeaw.ac.at/how-to-cite-voice-3-0-online/" target="_blank">
-              <v-list-item-icon class="mr-4"><v-icon>mdi-book</v-icon></v-list-item-icon>
-              <v-list-item-title>How to Cite VOICE</v-list-item-title>
-            </v-list-item>
-            <v-list-item href="https://voice.acdh.oeaw.ac.at/" target="_blank">
-              <v-list-item-icon class="mr-4"><v-icon>mdi-open-in-new</v-icon></v-list-item-icon>
-              <v-list-item-title>VOICE Homepage</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
       </div>
     </v-container>
     <v-main>
@@ -115,11 +73,11 @@
             <v-chip class="mx-1 mb-1" label link small v-bind:href="mainData.apiDependencyAndLicense" target="_blank">API: {{ mainData.apiVersion }}</v-chip>
           </div>
           <div class="text-center">
-            VOICE. 2021. The Vienna-Oxford International Corpus of English (version VOICE 3.0 Online). https://voice3.acdh.oeaw.ac.at ({{ now }}).
+            TUNICO. 2022. ({{ now }}).
             <v-tooltip top max-width="600">
               <template v-slot:activator="{ on, attrs }"><v-icon dense style="top:-1px;" v-bind="attrs" v-on="on">mdi-information-outline</v-icon></template>
               <div class="py-1 text-justify">
-                <p class="my-0">VOICE. 2021. The Vienna-Oxford International Corpus of English (version VOICE 3.0 Online). Founding director: Barbara Seidlhofer; Principal investigators VOICE 3.0: Marie-Luise Pitzl, Daniel Schopper; Researchers: Angelika Breiteneder, Hans-Christian Breuer, Nora Dorn, Theresa Klimpfinger, Stefan Majewski, Ruth Osimk-Teasdale, Hannes Pirker, Marie-Luise Pitzl, Michael Radeka, Stefanie Riegler, Barbara Seidlhofer, Omar Siam, Daniel Stoxreiter. https://voice3.acdh.oeaw.ac.at ({{ now }}).</p>
+                <p class="my-0">TUNICO. 2022. ({{ now }}).</p>
               </div>
             </v-tooltip>
             

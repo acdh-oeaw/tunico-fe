@@ -74,7 +74,7 @@ function renderExportUtterances (xmlObjLines, filteredSearchResults, view, type,
 
 function exportUtterancesList (xmlObjLines, filteredSearchResults, view, type, fxText, highlights, progressFunction = null, doneFunction = null, uList, htmlCss, htmlTemplate) {
   // console.log('exportUtterancesList', view, type, uList)
-  let aHeader = 'VOICE 3.0'
+  let aHeader = 'TUNICO'
   let aTime = new Date()
   let aDateTime = aTime.toLocaleString('en-US')
   let aFilename = 'voice' + (fxText && fxText.fileFx ? '-' + fxText.fileFx : '') + '_' + aTime.getFullYear() + '-' + ('0' + (aTime.getMonth()+1)).slice(-2) + '-' + ('0' + aTime.getDate()).slice(-2) + '_' + ('0' + aTime.getHours()).slice(-2) + '-' + ('0' + aTime.getMinutes()).slice(-2) + '-' + ('0' + aTime.getSeconds()).slice(-2)

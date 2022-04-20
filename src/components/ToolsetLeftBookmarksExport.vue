@@ -93,13 +93,13 @@ export default {
       let aTime = new Date()
       let aDateTime = aTime.toLocaleString('en-US')
       const wb = new ExcelJS.Workbook()
-      wb.title = 'VOICE 3.0'
+      wb.title = 'TUNICO'
       wb.subject = 'Bookmarks'
-      wb.creator = 'VOICE 3.0'
+      wb.creator = 'TUNICO'
       wb.created = aTime
       var ws
       ws = wb.addWorksheet('Bookmarks')
-      ws.addRow(['VOICE 3.0 - Bookmarks'])
+      ws.addRow(['TUNICO - Bookmarks'])
       ws.addRow(['Versions: FE ' + this.mainData.version + ' - API: ' + this.mainData.apiVersion])
       ws.addRow([aDateTime])
       ws.addRow()

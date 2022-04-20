@@ -2,14 +2,20 @@
   <div>
     <v-container class="home-width">
       <div class="py-5">
-        <h1 class="text-subtitle-1 font-weight-bold">A computer corpus of English as a lingua franca</h1>
-        <p>The most wide-spread contemporary use of English throughout the world is that of <i>English as a lingua franca (ELF)</i>, i.e. English used as a common means of communication among speakers from different first-language backgrounds. <b>VOICE</b>, the <b>V</b>ienna-<b>O</b>xford <b>I</b>nternational <b>C</b>orpus of <b>E</b>nglish, is a collection of language data, the first computer-readable corpus capturing spoken ELF interactions of this kind.</p>
+        <p>We investigate the spoken language of Tunisia’s youth.<br/>
+We create a corpus of spoken language.<br/>
+We compile a diachronic dictionary and<br/>
+we work on tools and methods beneficial for research in the field of Arabic studies and beyond.<br/>
+<p>Our project is grounded in a combination of dialectological approaches and up-to-date text technological methodologies.<br/>
+Our project assigns particular importance to the dictionary/corpus interface.<br/>
+Our project is conducted in the spirit of open source and open access. Therefore, both the corpus and the lexicographical data of the project will be made available to the scientific community through a publicly accessible web interface which will enable other scholars to do further analyses and to reuse the material.<br/>
+Our project is based at two research institutions, the Institute for Near Eastern Studies (University of Vienna) and the Austrian Centre for Digital Humanities (Austrian Academy of Sciences).</p>
       </div>
     </v-container>
     <div class="text-center py-10 indigo lighten-5" v-if="mainData.hideCookieConsent">
-      <h3 class="text-h5 font-weight-bold">Explore VOICE</h3>
+      <h3 class="text-h5 font-weight-bold">Explore TUNICO</h3>
       <div class="d-flex align-center search-frm mt-4">
-        <v-text-field @keyup.enter.native="search" v-model="mainData.search.value" label="Search VOICE" class="mr-3" data-testid="quickSearch"></v-text-field>
+        <v-text-field @keyup.enter.native="search" v-model="mainData.search.value" label="Search TUNICO" class="mr-3" data-testid="quickSearch"></v-text-field>
         <v-btn @click="search" color="indigo darken-4 white--text">Search</v-btn>
       </div>
       or
@@ -27,7 +33,7 @@
       <v-btn color="indigo darken-4 white--text" v-bind:small="true" v-on:click="cookiesAndTrackingRejected" data-testid="rejectTracking">I dont't want this</v-btn>
     </div>
     <div class="text-center py-5">
-      <p>The web interface for VOICE 3.0 Online was developed in the <a href="https://voice.acdh.oeaw.ac.at/" target="_blank">VOICE CLARIAH project</a></p>
+      <p>The web interface for TUNICO was developed in the <a href="https://voice.acdh.oeaw.ac.at/" target="_blank">VOICE CLARIAH project</a></p>
     </div>
   </div>
 </template>

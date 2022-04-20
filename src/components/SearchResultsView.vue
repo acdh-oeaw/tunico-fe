@@ -11,7 +11,7 @@
         </div>
         <div :class="'d-flex' + (mainData.search.view.type === 'xml-view' ? ' flex-wrap' : '')" v-if="xmlObjLines">
           <div class="line-uid pr-6" v-if="show_utI">
-            <button @click="goToUtterance(uObj.uId)" class="c-uid">{{ uObj.uId.split('_')[0] + ':' + uObj.uId.split('_')[2] }}</button>
+            <button @click="goToUtterance(uObj.uId)" class="c-uid">{{ uObj.uId.split('_')[0] + ':' + uObj.uId.split('_')[1] }}</button>
             <span class="u-hits" title="Hits">{{ uObj.hits.length }}</span>
           </div>
           <div class="line-jump" v-else>

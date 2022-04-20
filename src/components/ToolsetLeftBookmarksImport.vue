@@ -174,7 +174,7 @@ export default {
               if (aFileExt === 'xlsx') {
                 wb.xlsx.load(file).then(() => {
                   // console.log('wb', this.isTable, wb)
-                  if (wb.creator === 'VOICE 3.0' && wb.subject === 'Bookmarks') {
+                  if (wb.creator === 'TUNICO' && wb.subject === 'Bookmarks') {
                     let ws = wb.getWorksheet()
                     let rows = ws.getSheetValues()
                     if (rows) {

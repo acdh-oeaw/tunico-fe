@@ -5,10 +5,6 @@
         Tree
         <v-icon :class="'tree-icon' + (mainData.filter.manualSelection.length > 0 ? '' : ' fx-icon-red') + ' tree-icon-tree'" v-if="mainData.filter.active && mainData.filter.manualSelect">mdi-check-bold</v-icon>
       </v-tab>
-      <v-tab href="#filter">
-        Filter
-        <v-icon class="tree-icon" v-if="mainData.app.filterActive" title="Filters currently active.">mdi-exclamation-thick</v-icon>
-      </v-tab>
       <v-tab href="#bookmarks">Bookmarks</v-tab>
     </v-tabs>
     <v-tabs-items v-model="cTab" class="flex-grow-1 fill-height">

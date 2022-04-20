@@ -4,18 +4,10 @@
       <div class="fx-bb mb-3">
         <v-card class="mx-2 mb-2 px-1" flat>
           <div class="d-flex">
-            <v-switch v-model="mainData.options.treeShowSpet" dense hide-details class="mt-0 mr-3" label="SPET" title="Speech event types"></v-switch>
             <v-switch v-model="mainData.options.treeShowFiltered" dense hide-details class="mt-0 mr-2 s-small-font"
               label="Show only filtered speech events"
               v-if="mainData.app.filteredSeIds"
             ></v-switch>
-            <v-tooltip top max-width="300">
-              <template v-slot:activator="{ on, attrs }"><v-icon v-bind="attrs" v-on="on" class="ml-auto">mdi-information-outline</v-icon></template>
-              <div class="py-1">
-                <p><b>SPET Shifter:</b> Display sub-categorisation into speech event types.</p>
-                <p class="mb-0">Corpus texts to which filter choice applies are marked in black print in the corpus tree. Displayed in bold grey print are corpus texts containing applicable search results beyond the chosen filters.</p>
-              </div>
-            </v-tooltip>
           </div>
         </v-card>
       </div>
@@ -47,8 +39,6 @@
           <v-icon v-if="item.audioAvailable">mdi-volume-high</v-icon>
         </template>
       </v-treeview>
-      <!-- <v-btn @click="mainData.corpus.selectedElement = false; mainData.options.singleView = 'corpus'; mainData.corpus.showCorpusHeader = false;" small elevation="0" class="ma-3">VOICE 3.0</v-btn> -->
-      <v-btn @click="mainData.corpus.selectedElement = false; mainData.options.singleView = 'corpus'; mainData.corpus.showCorpusHeader = true;" small elevation="0" class="ma-3">VOICE Header</v-btn>
     </div>
   </div>
 </template>
