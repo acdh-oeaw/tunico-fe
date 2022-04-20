@@ -146,7 +146,7 @@ function renderingUtterance(uObj, xmlObj, type, highlight, isSearch = false, xml
       }
       if (type === 'pos') {
         // ana
-        if (uObj.attributes && uObj.attributes['ana'] && (uObj.attributes['part'] || uObj.attributes['join'])) {
+        if (uObj.attributes && uObj.attributes['type'] && uObj.attributes['type'] !== 'ignoreInSearchIndex' && (uObj.attributes['part'] || uObj.attributes['join'])) {
           if (fxCache.pos) {
             aTxt += fxCache.pos.c + '</span>'
           }
@@ -394,8 +394,8 @@ function renderingUtteranceAfter(uObj, xmlObj, type, isSearch, xmlIdCache, fxCac
   if (type === 'pos') {
     let pTxt = ''
     // ana
-    if (uObj.attributes && uObj.attributes['ana']) {
-      let ana = uObj.attributes['ana'].replace(/#/g, '').split('f')
+    if (uObj.attributes && uObj.attributes['type'] && uObj.attributes['type'] !== 'ignoreInSearchIndex') {
+      let ana = [uObj.attributes['type']]
       if (ana[0]) {
         pTxt += '<span class="fx-ana"><span class="fx-ana-s">_</span><span class="fx-ana-form">' + ana[0] + '</span>' + (ana[1] ? '<span class="fx-ana-f' + (ana[0] === ana[1] ? ' fx-ana-f-s' : '') + '">(' + ana[1] + ')</span>' : '') + '</span>'
       }
