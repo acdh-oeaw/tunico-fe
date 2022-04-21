@@ -390,12 +390,44 @@ function renderingUtteranceBefore(uObj, xmlObj, type, isSearch, xmlIdCache, fxCa
 
 function renderingUtteranceAfter(uObj, xmlObj, type, isSearch, xmlIdCache, fxCache) {
   let aTxt = ''
+  const posToAbbrev = {
+    'verb': 'V',
+    'noun': 'N',
+    'pronominalSuffix': 'PS',
+    'definiteArticle': 'DA',
+    'preposition': 'PR',
+    'conjunction': 'C',
+    'adverb': 'ADV',
+    'responseParticle': 'RPA',
+    'particle': 'PA',
+    'personalPronoun': 'PPR',
+    'interjection': 'INTJ',
+    'interrogative': 'INTR',
+    'adjective': 'ADJ',
+    'activeParticiple': 'AP',
+    'indefinite': 'IND',
+    'demonstrativePronoun': 'DPR',
+    'toponym': 'TOP',
+    'numeral': 'NUM',
+    'participle': 'P',
+    'pluralNoun': 'PLN',
+    'relativePronoun': 'RPR',
+    'collectiveNoun': 'CN',
+    'passiveParticiple': 'PP',
+    'ordinal': 'ORD',
+    'pronoun': 'PRON',
+    'elative': 'ELA',
+    'pluralDemonstrative': 'PLD',
+    'vocativeParticle': 'VPAR',
+    'dualNoun': 'DN',
+    'properNoun': 'PROPN'
+    }
   // pos - layout
   if (type === 'pos') {
     let pTxt = ''
     // ana
     if (uObj.attributes && uObj.attributes['type'] && uObj.attributes['type'] !== 'ignoreInSearchIndex') {
-      let ana = [uObj.attributes['type']]
+      let ana = [posToAbbrev[uObj.attributes['type']]]
       if (ana[0]) {
         pTxt += '<span class="fx-ana"><span class="fx-ana-s">_</span><span class="fx-ana-form">' + ana[0] + '</span>' + (ana[1] ? '<span class="fx-ana-f' + (ana[0] === ana[1] ? ' fx-ana-f-s' : '') + '">(' + ana[1] + ')</span>' : '') + '</span>'
       }
