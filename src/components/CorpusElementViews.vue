@@ -16,6 +16,7 @@
         <div class="line-speaker" v-if="show_sId"><button @click="showSpeaker(aLine)">{{ aLine.speaker }}</button></div>
         <div v-if="inView.indexOf(aIdx) > - 1" v-html="aLine[view]" :class="'flex-grow-1 ' + classes" data-testid="lineContent"></div>
         <div v-else data-testid="lineContent" class="flex-grow-1">{{ aLine.obj.text }}</div>
+        <button @click="showAudioUrl(aLine)" class="mx-1"><v-icon>mdi-play</v-icon></button>
         <button @click="editBookmark(aLine.uId, $event)" v-if="mainData.bookmarks.active" :class="'bookmark' + (Object.keys(mainData.bookmarks.elements).indexOf(aLine.uId) > -1 ? '-check' : '') + (shiftKeyDown ? ' bookmark-fast' : '')"></button>
       </div>
       <div class="line-gap" ref="lines" :key="'u' + element.id + 'lg' + aIdx" v-if="show_gap && aLine.gap">
@@ -70,6 +71,15 @@ export default {
     },
     showSpeaker (l) {
       this.mainData.showSpeaker = {id: l.uId.split('_')[0], speaker: l.speaker}
+    },
+    showAudioUrl (l) {
+      const aElement = this.mainData.corpus.obj[this.mainData.corpus.selectedElement]
+      if (l.audioUrl && aElement) {
+        this.$set(aElement, 'refs', {
+          audio: l.audioUrl
+        })
+        this.$set(aElement, 'audioAvailable', true)
+      }
     },
     goToUtterance () {
       if (this.mainData.corpus.goToUtterance) {

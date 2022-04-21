@@ -192,6 +192,7 @@ function parseBody (xmlObj) {
     let gap = ''
     let oSiblings = xmlObj.list[o.parent].children
     let oPos = oSiblings.indexOf(o)
+    let audioUrl = o.children.find(e => e.tag === 'media')?.attributes?.url
     if (oPos === oSiblings.length - 1) {
       let opSiblings = xmlObj.list[xmlObj.list[o.parent].parent].children
       let opPos = opSiblings.indexOf(xmlObj.list[o.parent])
@@ -221,6 +222,7 @@ function parseBody (xmlObj) {
       uId: o.attributes['xml:id'] ? o.attributes['xml:id'] : null,
       obj: o,
       speaker: o.attributes.who ? o.attributes.who.split('_').slice(-1)[0] : null,
+      audioUrl,
       gap: gap.length > 0 ? gap : null,
       text: null,
       textHeight: 24,
