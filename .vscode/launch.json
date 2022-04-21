@@ -9,12 +9,7 @@
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080/#/tool",
-            "webRoot": "${workspaceFolder}",
-            "sourceMapPathOverrides": {
-              "webpack:/tunico-fe/src/*": "${webRoot}/src/*",
-              "webpack:///./src/functions/*": "${webRoot}/src/functions/*",
-              "webpack:///./node_modules/*": "${webRoot}/node_modules/*"
-            }
+            "webRoot": "${workspaceFolder}"
         },
         {
             "type": "firefox",

@@ -26,7 +26,7 @@ module.exports = {
 ${license}
 @licend The above is the entire license notice for the JavaScript code in this file
   `])
-    config.devtool('eval-source-map')
+    config.devtool('eval-nosources-source-map')
   },
   "transpileDependencies": [
     "vuetify"
